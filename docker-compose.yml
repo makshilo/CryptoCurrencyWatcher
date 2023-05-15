@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15.0
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - target: 5432
+        published: 5435
+  pg-admin:
+      image: dpage/pgadmin4
+      ports:
+        - target: 80
+          published: 5055
+      environment:
+        PGADMIN_DEFAULT_EMAIL: admin@mail.ru
+        PGADMIN_DEFAULT_PASSWORD: admin
